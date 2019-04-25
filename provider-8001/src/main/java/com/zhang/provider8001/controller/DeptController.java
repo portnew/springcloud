@@ -1,6 +1,6 @@
 package com.zhang.provider8001.controller;
 
-import com.zhang.api.entity.Dept;
+import com.zhang.provider8001.entity.Dept;
 import com.zhang.provider8001.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -18,7 +18,7 @@ public class DeptController
     DiscoveryClient client;
 
     @RequestMapping(value="/dept/add",method= RequestMethod.POST)
-    public boolean add(@RequestBody Dept dept)
+    public int add(@RequestBody Dept dept)
     {
         return service.add(dept);
     }
@@ -33,6 +33,11 @@ public class DeptController
     public List<Dept> list()
     {
         return service.list();
+    }
+    @RequestMapping(value="/dept/listAll",method=RequestMethod.GET)
+    public List<Dept> listAll()
+    {
+        return service.listAll();
     }
 
     @GetMapping("/dept/discovery")

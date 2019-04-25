@@ -1,7 +1,6 @@
 package com.zhang.provider8001.service.impl;
 
-import com.zhang.api.entity.Dept;
-import com.zhang.api.service.DeptClientService;
+import com.zhang.provider8001.entity.Dept;
 import com.zhang.provider8001.mapper.DeptMapper;
 import com.zhang.provider8001.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +13,27 @@ public class DeptServiceImpl implements DeptService {
     DeptMapper mapper;
 
     @Override
-    public boolean add(Dept dept) {
-        return mapper.addDept(dept);
+    public int add(Dept dept) {
+        return mapper.insert(dept);
     }
-
-
 
     @Override
     public Dept get(Long id) {
-        return mapper.findById(id);
+        return mapper.selectByPrimaryKey(id);
     }
 
     @Override
     public List<Dept> list() {
-        return mapper.findAll();
+        return mapper.selectAll();
+    }
+
+    /**
+     * @Author 张宏运
+     * @Date  2019-04-25 10:56
+     * 测试mybatis注解
+     */
+    @Override
+    public List<Dept> listAll() {
+        return mapper.listAll();
     }
 }
