@@ -17,6 +17,8 @@
         <option value="$PROJECT_DIR$/zuul-gateway-9527/pom.xml" />
         <option value="$PROJECT_DIR$/config-3344/pom.xml" />
         <option value="$PROJECT_DIR$/config-client-3355/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin-9411/pom.xml" />
+        <option value="$PROJECT_DIR$/admin-8084/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: zipkin-9411
+  main:
+    allow-bean-definition-overriding: true
+    #\u6709\u65F6\u4F1A\u91CD\u590D\u6CE8\u518Cbean\uFF0C\u8FD9\u91CC\u5141\u8BB8\u91CD\u590D\u65F6\u4E00\u4E2A\u8986\u5199\u53E6\u4E00\u4E2A\uFF0C\u907F\u514D\u4EA7\u751F\u51B2\u7A81
+
+server:
+  port: 9411
+
+eureka:
+  client: #\u5BA2\u6237\u7AEF\u6CE8\u518C\u8FDBeureka\u670D\u52A1\u5217\u8868\u5185
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/ #,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zipkin #\u5728\u6CE8\u518C\u4E2D\u5FC3\u5904\u7684\u522B\u540D
+    prefer-ip-address: true #\u5728\u6CE8\u518C\u4E2D\u5FC3\u53EF\u4EE5\u663E\u793Aip
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

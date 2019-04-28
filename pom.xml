@@ -28,7 +28,8 @@
         <module>zuul-gateway-9527</module>
         <module>config-3344</module>
         <module>config-client-3355</module>
-
+        <module>zipkin-9411</module>
+        <module>admin-8084</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
