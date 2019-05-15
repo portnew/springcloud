@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: admin-8084
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8084
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # \u6CE8\u610F\uFF1A\u6B64\u5904\u5728\u89C6\u9891\u91CC\u662F include: ["health", "info"] \u4F46\u5DF2\u65E0\u6548\u4E86\uFF0C\u8BF7\u4FEE\u6539
+        include: health,info
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/
